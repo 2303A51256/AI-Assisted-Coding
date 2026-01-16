@@ -36,6 +36,7 @@ print(is_valid(test_string))  # This will print True or False based on the input
 # Write a Python function to validate whether an email address is valid or not
 def is_valid_email(email):
     import re
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     return re.match(pattern, email) is not None
 # Example usage:
 email_input = input("Enter an email address: ")
@@ -53,7 +54,7 @@ else:
 # Example: "user@.com" → False
 def is_valid_email(email):
     import re
-
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     return re.match(pattern, email) is not None
 # Example usage:
 email_input = input("Enter an email address: ")
@@ -74,11 +75,11 @@ print("Sum of digits:", sum_of_digits(num))  # This will print the sum of the di
 
 
 
-"Task 5: Prompt Tuning - Summing Digits of a Number (Task + Input/Output example)"
+""" "Task 5: Prompt Tuning - Summing Digits of a Number (Task + Input/Output example)"
 # Write a Python function sum_of_digits(n) that returns the sum of all digits in a number
 # Example: input = 123, output = 6
 def sum_of_digits_tuned(n):
     return sum(int(digit) for digit in str(n))
 # Example usage:
 num_tuned = int(input("Enter a number: "))
-print("Sum of digits (tuned):", sum_of_digits_tuned(num_tuned))  # This will print the sum of the digits of the number
+print("Sum of digits (tuned):", sum_of_digits_tuned(num_tuned))  # This will print the sum of the digits of the number """
