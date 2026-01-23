@@ -1,3 +1,4 @@
+
 "1. Email Classification using Prompt Engineering"
 "a. Prepare Sample Data - Prompt"
 # Write a Python program to prepare sample data for email classification
@@ -193,11 +194,11 @@ programming_questions = [
 # Question: "Why am I getting an indentation error?"
 # Return only the category name
 def classify_programming_question_zero_shot(question):
-    if "syntax error" in question or "indentation error" in question or "missing parenthesis" in question:
+    if "syntax error" in question or "indentation error" in question or "missing parenthesis" in question or "typo" in question or "unexpected token" in question:
         return "Syntax Error"
-    elif "not producing expected output" in question or "incorrect results" in question:
+    elif "not producing expected output" in question or "incorrect results" in question or "bug" in question or "wrong output" in question or "doesn't work as intended" in question or "logic error" in question:
         return "Logic Error"
-    elif "optimize" in question or "improve performance" in question or "too slow" in question:
+    elif "optimize" in question or "improve performance" in question or "too slow" in question or "make it faster" in question or "efficiency" in question or "optimize algorithm" in question:
         return "Optimization"
     else:
         return "Conceptual Question"
@@ -247,7 +248,7 @@ test_questions = [
     "Why is my loop not working as expected?"
 ]
 for question in test_questions:
-    category = classify_programming_question_zero_shot(question)
+    category = classify_programming_question_zero_shot(question.lower())
     print(f"Question: \"{question}\"\nCategory: {category}\n")
 # Note: As with previous sections, separate functions for one-shot and few-shot prompting
 # would be implemented for a thorough evaluation. Here, we used the same function for simplicity.
@@ -275,11 +276,11 @@ social_media_posts = [
 # Post: "Worst service ever"
 # Return only the category name
 def classify_social_media_post_zero_shot(post):
-    if "new product" in post or "discounts" in post or "special offers" in post:
+    if "new product" in post or "discounts" in post or "special offers" in post or "launch" in post or "sale" in post or "buy one get one" in post or "limited time" in post.lower():
         return "Promotion"
-    elif "disappointed" in post or "damaged" in post or "worst service" in post:
+    elif "disappointed" in post or "damaged" in post or "worst service" in post or "unhappy" in post or "issues" in post or "complaint" in post or "problem" in post:
         return "Complaint"
-    elif "thank you" in post or "love" in post or "outstanding" in post:
+    elif "thank you" in post or "love" in post or "outstanding" in post or "amazing support" in post or "great service" in post or "awesome" in post:
         return "Appreciation"
     else:
         return "Inquiry"
